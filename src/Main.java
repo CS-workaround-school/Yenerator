@@ -1,5 +1,4 @@
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +10,7 @@ public class Main {
         ImageIcon ye = new ImageIcon("ye.jpg");
         JTextField textField = new JTextField();
         JFrame frame = new JFrame();
-        JLabel label = getLabel(ye, "");
+        JLabel label = getLabel(ye);
 
         // Settando campo de texto
         textField.setPreferredSize(new Dimension(250, 40));
@@ -42,9 +41,9 @@ public class Main {
     }
 
     // Método da foto e do texto (label)
-    private static JLabel getLabel (ImageIcon ye, String texto){
+    private static JLabel getLabel (ImageIcon ye){
         JLabel label = new JLabel();
-        label.setText("<HTML><center>I hate being<br>" + texto + "<br>its awesome</HTML>");
+        label.setText("<HTML><center>I hate being<br> <br>its awesome</HTML>");
         label.setIcon(ye);
         //label.setHorizontalTextPosition(JLabel.CENTER ou JLabel.LEFT ou JLabel.RIGHT);
         //label.setVerticallyTextPosition(JLabel.BOTTOM ou JLabel.TOP ou JLabel.CENTER
@@ -53,7 +52,7 @@ public class Main {
         label.setHorizontalAlignment(JLabel.CENTER);
         label.setVerticalAlignment(JLabel.CENTER);
         label.setForeground(Color.green);
-        label.setFont(new Font("Yung Jakes New Handwriting", Font.TRUETYPE_FONT, 50));
+        label.setFont(new Font("Yung Jakes New Handwriting", Font.PLAIN, 50));
         label.setIconTextGap(10);
         label.setBackground(Color.black);
         label.setOpaque(true);
