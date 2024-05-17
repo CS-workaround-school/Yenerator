@@ -8,6 +8,15 @@ public class Main {
         JTextField textField = new JTextField();
         JFrame frame = new JFrame();
         JLabel label = getLabel(ye);
+        JPanel buttonPanel = new JPanel();
+        JButton button = new JButton();
+
+        // Settando botão e painel
+        button.setSize(new Dimension(200, 40));
+        button.setText("Add image");
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+        buttonPanel.add(textField);
+        buttonPanel.add(button);
 
         // Settando campo de texto
         textField.setPreferredSize(new Dimension(250, 40));
@@ -24,12 +33,22 @@ public class Main {
         frame.setIconImage(image.getImage());
         frame.getContentPane().setBackground(Color.black);
         frame.add(label, BorderLayout.CENTER); // BorderLayout fez a boa aq
-        frame.add(textField, BorderLayout.SOUTH); // BorderLayout fez a boa aq
+        frame.add(buttonPanel, BorderLayout.SOUTH);
 
         // Codigo que faz a ação de ler e escrever o texto
         textField.addActionListener((event) -> {
             String midText = textField.getText();
             label.setText("<HTML><center>" + midText + "</HTML>");
+        });
+
+        button.addActionListener((event) -> {
+            JFileChooser file = new JFileChooser();
+            int result = file.showOpenDialog(frame);
+            if (result == file.APPROVE_OPTION) {
+                String imagePath = file.getSelectedFile().getAbsolutePath();
+                ye.setImage(new ImageIcon(imagePath).getImage());
+                label.setIcon(ye);
+            }
         });
     }
 
