@@ -30,13 +30,10 @@ public class Main {
         frame.add(textField, BorderLayout.SOUTH); // BorderLayout fez a boa aq
 
         // Codigo que faz a ação de ler e escrever o texto
-        textField.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String midText = textField.getText();
-                label.setText("<HTML><center>I hate being<br>" + midText + "<br>its awesome</HTML>");
-                System.out.println(midText);
-            }
+        textField.addActionListener((event) -> {
+            String midText = textField.getText();
+            label.setText("<HTML><center>I hate being<br>" + midText + "<br>its awesome</HTML>");
+            System.out.println(midText);
         });
     }
 
