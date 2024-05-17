@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 public class Main {
     public static void main(String[] args) {
@@ -36,29 +37,32 @@ public class Main {
         frame.add(buttonPanel, BorderLayout.SOUTH);
 
         // Codigo que faz a ação de ler e escrever o texto
-        textField.addActionListener((event) -> {
+        textField.addActionListener((_) -> {
             String midText = textField.getText();
             label.setText("<HTML><center>" + midText + "</HTML>");
         });
 
-        button.addActionListener((event) -> {
+        // Codigo que muda o fundo
+        button.addActionListener((_) -> {
             JFileChooser file = new JFileChooser();
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG & PNG Images", "jpg", "png");
+            file.setFileFilter(filter);
             int result = file.showOpenDialog(frame);
-            if (result == file.APPROVE_OPTION) {
+            if (result == JFileChooser.APPROVE_OPTION) {
                 String imagePath = file.getSelectedFile().getAbsolutePath();
                 ye.setImage(new ImageIcon(imagePath).getImage());
                 label.setIcon(ye);
             }
+
         });
     }
-
     // Método da foto e do texto (label)
     private static JLabel getLabel (ImageIcon ye){
         JLabel label = new JLabel();
         label.setText("<HTML><center>I hate being<br> <br>its awesome</HTML>");
         label.setIcon(ye);
         //label.setHorizontalTextPosition(JLabel.CENTER ou JLabel.LEFT ou JLabel.RIGHT);
-        //label.setVerticallyTextPosition(JLabel.BOTTOM ou JLabel.TOP ou JLabel.CENTER
+        //label.setVerticallyTextPosition(JLabel.BOTTOM ou JLabel.TOP ou JLabel.CENTER);
         label.setHorizontalTextPosition(JLabel.CENTER);
         label.setVerticalTextPosition(JLabel.CENTER);
         label.setHorizontalAlignment(JLabel.CENTER);
