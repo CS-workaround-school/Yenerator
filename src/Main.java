@@ -26,16 +26,16 @@ public class Main {
         frame.setTitle("TestePainel");
         frame.setIconImage(image.getImage());
         frame.getContentPane().setBackground(Color.black);
-        frame.add(label);
-        frame.add(textField);
+        frame.add(label, BorderLayout.CENTER); // BorderLayout fez a boa aq
+        frame.add(textField, BorderLayout.SOUTH); // BorderLayout fez a boa aq
 
         // Codigo que faz a ação de ler e escrever o texto
         textField.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String a = textField.getText();
-                label.setText("<HTML><center>I hate being<br>" + a + "<br>its awesome</HTML>");
-                System.out.println(a);
+                String midText = textField.getText();
+                label.setText("<HTML><center>I hate being<br>" + midText + "<br>its awesome</HTML>");
+                System.out.println(midText);
             }
         });
     }
