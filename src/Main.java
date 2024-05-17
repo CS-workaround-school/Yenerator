@@ -1,8 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 public class Main {
     public static void main(String[] args) {
         // Instanciando
@@ -32,8 +29,7 @@ public class Main {
         // Codigo que faz a ação de ler e escrever o texto
         textField.addActionListener((event) -> {
             String midText = textField.getText();
-            label.setText("<HTML><center>I hate being<br>" + midText + "<br>its awesome</HTML>");
-            System.out.println(midText);
+            label.setText("<HTML><center>" + midText + "</HTML>");
         });
     }
 
