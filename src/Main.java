@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         // Instanciando
         ImageIcon image = new ImageIcon("icon.jpg");
-        ImageIcon ye = new ImageIcon("ye.jpg");
+        ImageIcon ye = new ImageIcon("sample.jpg");
         JTextField textField = new JTextField();
         JFrame frame = new JFrame();
         JLabel label = getLabel(ye);
@@ -59,7 +59,7 @@ public class Main {
     // Método da foto e do texto (label)
     private static JLabel getLabel (ImageIcon ye){
         JLabel label = new JLabel();
-        label.setText("<HTML><center>I hate being<br> <br>its awesome</HTML>");
+        label.setText("<HTML><center>bastard</HTML>");
         label.setIcon(ye);
         //label.setHorizontalTextPosition(JLabel.CENTER ou JLabel.LEFT ou JLabel.RIGHT);
         //label.setVerticallyTextPosition(JLabel.BOTTOM ou JLabel.TOP ou JLabel.CENTER);
@@ -68,7 +68,7 @@ public class Main {
         label.setHorizontalAlignment(JLabel.CENTER);
         label.setVerticalAlignment(JLabel.CENTER);
         label.setForeground(Color.green);
-        label.setFont(new Font("Yung Jakes New Handwriting", Font.PLAIN, 50));
+        label.setFont(new Font("Cooper Black", Font.PLAIN, 50));
         label.setIconTextGap(10);
         label.setBackground(Color.black);
         label.setOpaque(true);
